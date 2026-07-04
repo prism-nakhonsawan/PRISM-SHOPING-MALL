@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)file:///C:/Users/Admin/AppData/Local/Temp/7zO438DB7F9/L4_mastery.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Level 4 · Mastery — My Paragraph, Both Sides</title>
+<style>
+  :root{
+    --night:#1a1430; --plum:#3d2b66; --violet:#7c5cc4; --lilac:#b79cf0;
+    --pale:#efe9fb; --mist:#f7f4fd; --gold:#e8b54a; --gold-deep:#c4881a;
+    --ink:#241b3d; --muted:#6b5e8a; --line:#ddd2f0; --ok:#3a9d6b; --bad:#d8604a;
+    --shadow:0 12px 40px -14px rgba(26,20,48,.4);
+    --lv:#7c5cc4; --lv-bg:#ece2fb;
+    --c-topic:#7c5cc4; --c-v1:#1b6e9b; --c-v2:#c4881a; --c-op:#3a9d6b; --c-close:#b14b8e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html{-webkit-text-size-adjust:100%}
+  body{font-family:'Georgia','Times New Roman',serif;background:linear-gradient(165deg,#f5f1fc,#eee7f8);color:var(--ink);min-height:100vh;line-height:1.6}
+  .app{max-width:720px;margin:0 auto;padding:0 16px 90px}
+  header{text-align:center;padding:22px 0 8px}
+  .lvband{display:inline-flex;align-items:center;gap:8px;background:var(--lv-bg);color:var(--lv);font-family:'Trebuchet MS',sans-serif;font-weight:bold;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:8px}
+  .lvdots{display:flex;gap:3px} .lvdots i{width:7px;height:7px;border-radius:50%;background:var(--lv)}
+  h1{font-size:1.45rem;line-height:1.15;color:var(--night)} h1 .glow{color:var(--gold-deep)}
+  .sub{font-size:.82rem;color:var(--muted);margin-top:6px;font-style:italic}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow);margin-bottom:14px}
+  .goal{font-size:.85rem;color:var(--muted);background:var(--mist);border-radius:10px;padding:11px 13px;margin:6px 0;border-left:3px solid var(--lilac)}
+  .secttl{font-family:'Trebuchet MS',sans-serif;font-size:.68rem;font-weight:bold;letter-spacing:.07em;text-transform:uppercase;color:var(--violet);margin:20px 0 8px;display:flex;align-items:center;gap:7px}
+  .secttl .dot{width:7px;height:7px;border-radius:50%;background:var(--gold)}
+  .model{background:linear-gradient(160deg,#fdfaf2,#fffefb);border:1px solid #f0e2c4;border-left:4px solid var(--gold);border-radius:11px;padding:14px 16px;font-size:.88rem;margin-bottom:6px}
+  .model .row{display:flex;gap:8px;padding:6px 0;align-items:baseline;flex-wrap:wrap}
+  .tag{font-family:'Trebuchet MS',sans-serif;font-size:.6rem;font-weight:bold;padding:3px 9px;border-radius:6px;flex:0 0 auto;text-transform:uppercase}
+  .t-s{background:#dcebfb;color:#1b6e9b} .t-v{background:#fde4cc;color:#c4881a} .t-o{background:#dcf3e4;color:#3a9d6b} .t-c{background:#ede1fb;color:#7c5cc4}
+  /* IELTS task card */
+  .ielts{background:linear-gradient(160deg,#1a1430,#3d2b66);color:#ece2fb;border-radius:13px;padding:17px 18px;margin-bottom:8px}
+  .ielts .ribbon{font-family:'Trebuchet MS',sans-serif;font-size:.6rem;font-weight:bold;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+  .ielts .prompt{font-size:1rem;line-height:1.6}
+  .ielts .instr{font-size:.8rem;color:#c3b6e6;margin-top:10px;font-style:italic;border-top:1px solid rgba(255,255,255,.15);padding-top:10px}
+  /* clickable full model */
+  .tapnote{font-family:'Trebuchet MS',sans-serif;font-size:.66rem;color:var(--violet);text-align:center;margin-bottom:8px;letter-spacing:.04em}
+  .imodel{background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:15px;font-size:.95rem;line-height:2}
+  .imodel .s{cursor:pointer;padding:2px 3px;border-radius:5px;transition:.15s}
+  .imodel .s:hover{background:var(--mist)}
+  .imodel .s.on{color:#fff;font-weight:bold}
+  .s.topic.on{background:var(--c-topic)} .s.v1.on{background:var(--c-v1)} .s.v2.on{background:var(--c-v2)} .s.op.on{background:var(--c-op)} .s.close.on{background:var(--c-close)}
+  .partlabel{margin-top:10px;padding:11px 13px;border-radius:9px;font-size:.85rem;display:none;animation:pop .25s ease;color:#fff}
+  .partlabel.show{display:block} @keyframes pop{from{opacity:0;transform:translateY(5px)}to{opacity:1}}
+  .partlabel .pt{font-family:'Trebuchet MS',sans-serif;font-weight:bold;font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:3px}
+  .legend5{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+  .lg{font-family:'Trebuchet MS',sans-serif;font-size:.62rem;font-weight:bold;padding:3px 9px;border-radius:20px;color:#fff}
+  .ex{margin-bottom:12px;padding:14px;background:var(--mist);border-radius:12px;border:1px solid var(--line)}
+  .ex .qline{font-size:.94rem;font-weight:bold;margin-bottom:9px} .ex .qth{font-size:.78rem;color:var(--muted);font-style:italic;font-weight:normal}
+  .opts{display:flex;flex-direction:column;gap:7px}
+  .opt{text-align:left;padding:12px 14px;border-radius:9px;border:1.5px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;font-family:'Georgia',serif;font-size:.91rem;transition:.15s}
+  .opt:active{transform:scale(.99)} .opt.correct{background:#e2f3ea;border-color:var(--ok);color:var(--ok)} .opt.wrong{background:#fbe8e4;border-color:var(--bad);color:var(--bad)} .opt.locked{cursor:default}
+  .fb{margin-top:9px;font-size:.82rem;padding:9px 12px;border-radius:8px;display:none}
+  .fb.show{display:block} .fb.good{background:#e2f3ea;border-left:3px solid var(--ok)} .fb.bad{background:#fbe8e4;border-left:3px solid var(--bad)}
+  .tiles{display:flex;flex-wrap:wrap;gap:7px;margin:8px 0}
+  .tile{font-family:'Trebuchet MS',sans-serif;font-size:.84rem;padding:9px 13px;border-radius:9px;border:1.5px solid var(--line);background:#fff;cursor:pointer;transition:.15s}
+  .tile:active{transform:scale(.96)} .tile.picked{background:var(--violet);color:#fff;border-color:var(--violet);opacity:.4}
+  .build{min-height:46px;border:1.5px dashed var(--lilac);border-radius:10px;padding:10px 12px;background:#fff;font-size:.92rem;margin:6px 0;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+  .build .bt{background:var(--pale);padding:5px 10px;border-radius:7px;font-family:'Trebuchet MS',sans-serif;font-size:.84rem}
+  .build .ph{color:var(--muted);font-style:italic;font-size:.84rem}
+  .mini{font-family:'Trebuchet MS',sans-serif;font-size:.72rem;font-weight:bold;padding:8px 14px;border-radius:9px;border:none;cursor:pointer;background:var(--violet);color:#fff;margin-right:6px}
+  .mini.ghost{background:#fff;color:var(--violet);border:1.5px solid var(--line)}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}
+  .chip{font-family:'Trebuchet MS',sans-serif;font-size:.76rem;background:var(--pale);border:1px solid var(--line);color:var(--plum);border-radius:8px;padding:7px 11px;cursor:pointer}
+  .chip:active{background:var(--violet);color:#fff}
+  textarea{width:100%;min-height:160px;margin-top:8px;padding:13px;border:1.5px solid var(--line);border-radius:11px;font-family:'Georgia',serif;font-size:.94rem;line-height:1.7;color:var(--ink);resize:vertical;background:#fdfcff}
+  textarea:focus{outline:none;border-color:var(--lilac);box-shadow:0 0 0 4px rgba(183,156,240,.2)}
+  .counter{font-family:'Trebuchet MS',sans-serif;font-size:.7rem;color:var(--muted);text-align:right;margin-top:4px}
+  .aibox{margin-top:12px;padding:14px;border-radius:13px;background:linear-gradient(160deg,#fff,#f7f4fd);border:1.5px solid var(--lilac)}
+  .aibox .lead{font-family:'Trebuchet MS',sans-serif;font-weight:bold;font-size:.76rem;color:var(--violet);margin-bottom:4px}
+  .aibox .role{font-size:.74rem;color:var(--muted);margin-bottom:8px}
+  .promptbox{background:var(--night);color:#d9ccf5;border-radius:9px;padding:11px 13px;font-family:'Courier New',monospace;font-size:.73rem;line-height:1.5;white-space:pre-wrap;margin:6px 0 9px}
+  .ghostbtn{background:#fff;border:1.5px solid var(--line);color:var(--violet);font-family:'Trebuchet MS',sans-serif;font-size:.75rem;font-weight:bold;padding:10px 14px;border-radius:10px;cursor:pointer}
+  .ghostbtn.done{background:#e2f3ea;border-color:var(--ok);color:var(--ok)}
+  .note{font-size:.76rem;color:var(--muted);margin-top:8px;font-style:italic}
+  .reflect{background:var(--mist);border-radius:11px;padding:12px 14px;font-size:.85rem;margin-top:6px}
+  .reflect label{display:flex;gap:9px;align-items:flex-start;margin-bottom:7px} .reflect label:last-child{margin-bottom:0}
+  .reflect input{margin-top:4px;width:17px;height:17px;accent-color:var(--ok);flex:0 0 auto}
+  /* rubric button + modal */
+  .rubric-btn{width:100%;margin-top:10px;background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#fff;font-family:'Trebuchet MS',sans-serif;font-weight:bold;font-size:.82rem;padding:13px;border-radius:11px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px}
+  .rubric-btn:active{transform:scale(.99)}
+  .overlay{position:fixed;inset:0;background:rgba(26,20,48,.55);backdrop-filter:blur(3px);display:none;align-items:flex-end;justify-content:center;z-index:50;padding:0}
+  .overlay.show{display:flex;animation:fade .2s ease}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  .sheet{background:#fff;width:100%;max-width:720px;max-height:88vh;overflow:auto;border-radius:20px 20px 0 0;padding:20px 18px 30px;animation:slideup .3s cubic-bezier(.2,.8,.2,1)}
+  @keyframes slideup{from{transform:translateY(100%)}to{transform:none}}
+  .sheet .grab{width:42px;height:5px;border-radius:3px;background:var(--line);margin:0 auto 14px}
+  .sheet h3{font-size:1.15rem;color:var(--night);margin-bottom:3px}
+  .sheet .h3sub{font-size:.78rem;color:var(--muted);font-style:italic;margin-bottom:14px}
+  .dim{border:1px solid var(--line);border-radius:12px;padding:13px;margin-bottom:10px}
+  .dim .dh{display:flex;align-items:center;gap:9px;margin-bottom:7px}
+  .dim .code{font-family:'Trebuchet MS',sans-serif;font-weight:bold;font-size:.7rem;color:#fff;padding:4px 9px;border-radius:7px;letter-spacing:.04em}
+  .dim .dname{font-weight:bold;font-size:.92rem} .dim .dth{font-size:.74rem;color:var(--muted);font-style:italic}
+  .band{display:flex;gap:7px;font-size:.8rem;padding:5px 0;border-top:1px dashed var(--line)}
+  .band b{font-family:'Trebuchet MS',sans-serif;color:var(--violet);flex:0 0 64px;font-size:.72rem}
+  .closebtn{width:100%;margin-top:6px;background:var(--night);color:#fff;font-family:'Trebuchet MS',sans-serif;font-weight:bold;padding:12px;border-radius:11px;border:none;cursor:pointer;font-size:.82rem}
+
+  /* ---- Microlearning additions ---- */
+  .steps{display:flex;gap:5px;justify-content:center;flex-wrap:wrap;margin:10px 0 4px}
+  .step{font-family:'Trebuchet MS',sans-serif;font-size:.6rem;font-weight:bold;letter-spacing:.03em;text-transform:uppercase;padding:5px 10px;border-radius:20px;background:var(--mist);color:var(--muted);border:1px solid var(--line)}
+  .step b{color:var(--violet)}
+  .timebadge{display:inline-block;font-family:'Trebuchet MS',sans-serif;font-size:.62rem;font-weight:bold;color:var(--gold-deep);background:#fdf3df;border:1px solid #f0e2c4;border-radius:20px;padding:4px 11px;margin-top:6px}
+  .progwrap{position:sticky;top:0;z-index:30;background:linear-gradient(180deg,rgba(245,241,252,.97),rgba(245,241,252,.85));backdrop-filter:blur(4px);padding:8px 0 6px;margin:0 -16px 4px;border-bottom:1px solid var(--line)}
+  .progwrap .inner{max-width:720px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:10px}
+  .progbar{flex:1;height:9px;background:#e5dcf3;border-radius:6px;overflow:hidden}
+  .progfill{height:100%;width:0;background:linear-gradient(90deg,var(--violet),var(--gold));border-radius:6px;transition:width .35s cubic-bezier(.2,.8,.2,1)}
+  .progtxt{font-family:'Trebuchet MS',sans-serif;font-size:.66rem;font-weight:bold;color:var(--violet);flex:0 0 auto;min-width:38px;text-align:right}
+  .winbadge{display:none;text-align:center;font-family:'Trebuchet MS',sans-serif;font-weight:bold;font-size:.84rem;color:var(--ok);background:#e2f3ea;border:1px solid #bfe6cf;border-radius:11px;padding:10px;margin:10px 0}
+  .winbadge.show{display:block;animation:pop .3s ease}
+  .reflectstep{background:linear-gradient(160deg,#fff,#f7f4fd);border:1.5px solid var(--lilac);border-radius:13px;padding:15px;margin-top:14px}
+  .reflectstep .rh{font-family:'Trebuchet MS',sans-serif;font-weight:bold;font-size:.8rem;color:var(--violet);margin-bottom:8px}
+  .reflectstep textarea{min-height:60px}
+  .reflectstep .q{font-size:.86rem;margin:8px 0 2px;color:var(--ink)}
+
+  /* ---- Microlearning v2: 5-step banners, live score, GC submit ---- */
+  .stepbanner{display:flex;align-items:center;gap:10px;margin:26px -20px 14px;padding:11px 20px;background:linear-gradient(135deg,var(--night),var(--plum));color:#fff;border-left:5px solid var(--gold)}
+  .stepbanner .sn{font-family:'Trebuchet MS',sans-serif;font-weight:bold;font-size:.64rem;letter-spacing:.12em;background:var(--gold);color:var(--night);padding:4px 10px;border-radius:6px;flex:0 0 auto}
+  .stepbanner .st{font-family:'Trebuchet MS',sans-serif;font-weight:bold;font-size:.84rem;flex:1;line-height:1.3}
+  .stepbanner .st small{display:block;font-weight:normal;font-size:.66rem;color:#c3b6e6;font-style:italic}
+  .stepbanner .tm{font-family:'Trebuchet MS',sans-serif;font-size:.62rem;font-weight:bold;color:var(--gold);flex:0 0 auto;white-space:nowrap}
+  .scoretxt{font-family:'Trebuchet MS',sans-serif;font-size:.68rem;font-weight:bold;color:var(--gold-deep);background:#fdf3df;border:1px solid #f0e2c4;border-radius:20px;padding:3px 10px;flex:0 0 auto;white-space:nowrap}
+  .idbar{background:linear-gradient(160deg,#fff,var(--mist));border:1.5px solid var(--lilac);border-radius:13px;padding:13px 14px;margin-bottom:8px}
+  .idbar .ih{font-family:'Trebuchet MS',sans-serif;font-weight:bold;font-size:.74rem;color:var(--violet);margin-bottom:8px}
+  .idrow{display:flex;gap:8px;flex-wrap:wrap}
+  .idrow .fld{flex:1 1 150px;display:flex;flex-direction:column;gap:3px}
+  .idrow .fld.small{flex:0 1 96px}
+  .idrow label{font-family:'Trebuchet MS',sans-serif;font-size:.62rem;font-weight:bold;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+  .idrow input{padding:9px 11px;border:1.5px solid var(--line);border-radius:9px;font-family:'Georgia',serif;font-size:.9rem;background:#fff;color:var(--ink);width:100%}
+  .idrow input:focus{outline:none;border-color:var(--lilac);box-shadow:0 0 0 3px rgba(183,156,240,.2)}
+  .opt:disabled{opacity:.5;cursor:default}
+  .opt.reveal{border-color:var(--ok);background:#f0faf4}
+  .ptspop{position:fixed;z-index:80;font-family:'Trebuchet MS',sans-serif;font-weight:bold;color:var(--gold-deep);background:#fff;border:1.5px solid var(--gold);border-radius:20px;padding:4px 11px;font-size:.8rem;pointer-events:none;animation:flyup 1s ease forwards;box-shadow:var(--shadow)}
+  @keyframes flyup{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(-46px)}}
+  .wstat{font-family:'Trebuchet MS',sans-serif;font-size:.72rem;margin-top:6px;color:var(--muted)}
+  .wstat.ok{color:var(--ok);font-weight:bold}
+  .submitcard{background:linear-gradient(160deg,#fdfaf2,#fff);border:2px solid var(--gold);border-radius:15px;padding:17px;margin-top:4px}
+  .submitcard h3{font-size:1.05rem;color:var(--night);margin-bottom:2px}
+  .submitcard .ssub{font-size:.76rem;color:var(--muted);font-style:italic;margin-bottom:10px}
+  .scoregrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin:10px 0}
+  .scell{background:#fff;border:1px solid var(--line);border-radius:11px;padding:10px;text-align:center}
+  .scell .sv{font-family:'Trebuchet MS',sans-serif;font-weight:bold;font-size:1.2rem;color:var(--violet)}
+  .scell .sl{font-size:.62rem;color:var(--muted);font-family:'Trebuchet MS',sans-serif;text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
+  .sbtn{font-family:'Trebuchet MS',sans-serif;font-weight:bold;font-size:.78rem;padding:12px 15px;border-radius:11px;border:none;cursor:pointer;margin:4px 6px 2px 0}
+  .sbtn.gold{background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#fff}
+  .sbtn.vio{background:var(--violet);color:#fff}
+  .sbtn.ghost{background:#fff;border:1.5px solid var(--line);color:var(--violet)}
+  .sbtn:active{transform:scale(.98)}
+  .reportbox{display:none;background:var(--night);color:#e6ddf8;border-radius:11px;padding:13px;font-family:'Courier New',monospace;font-size:.72rem;line-height:1.55;white-space:pre-wrap;margin-top:10px;max-height:280px;overflow:auto}
+  .reportbox.show{display:block}
+  .submitnote{font-size:.76rem;color:var(--gold-deep);background:#fdf3df;border:1px solid #f0e2c4;border-radius:9px;padding:9px 12px;margin-top:9px;line-height:1.65}
+  .warn{display:none;font-size:.78rem;color:var(--bad);background:#fbe8e4;border-left:3px solid var(--bad);border-radius:8px;padding:8px 11px;margin-top:8px}
+  .warn.show{display:block}
+  .confetti{position:fixed;top:-30px;z-index:90;font-size:1.25rem;pointer-events:none;animation:cfall linear forwards}
+  @keyframes cfall{to{transform:translateY(108vh) rotate(560deg);opacity:.9}}
+  /* ---- Learning Shopping: self-paced mission map ---- */
+  .shop{margin:16px 0 6px}
+  .shoph{font-family:'Trebuchet MS',sans-serif;font-weight:bold;font-size:.92rem;color:var(--night);background:linear-gradient(160deg,#fdfaf2,#fff);border:1.5px solid var(--gold);border-radius:13px;padding:13px 15px;margin-bottom:10px}
+  .shoph small{display:block;font-weight:normal;font-size:.72rem;color:var(--muted);font-style:italic;margin-top:3px;line-height:1.6}
+  .shopgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:9px}
+  .mcard{border:1.5px solid var(--line);border-radius:13px;background:#fff;padding:12px;cursor:pointer;text-align:left;transition:.15s;font-family:'Trebuchet MS',sans-serif;position:relative}
+  .mcard:active{transform:scale(.97)}
+  .mcard.done{border-color:var(--ok);background:#f4fbf7}
+  .mcard.done::after{content:"✓";position:absolute;top:8px;right:10px;color:var(--ok);font-weight:bold}
+  .mcard .me{font-size:1.35rem}
+  .mcard .mn{font-size:.58rem;font-weight:bold;letter-spacing:.1em;color:var(--violet);margin-top:2px}
+  .mcard .mt{font-weight:bold;font-size:.76rem;color:var(--night);margin:3px 0 2px;line-height:1.35}
+  .mcard .ms{font-size:.62rem;color:var(--muted)}
+  .mcard .mstat{margin-top:7px;font-size:.66rem;font-weight:bold;color:var(--gold-deep)}
+  .mission{display:none}
+  .mission.open{display:block;animation:pop .25s ease}
+  .mnav{display:flex;gap:8px;justify-content:space-between;margin-top:18px;flex-wrap:wrap}
+  .shop.hidden{display:none}
+
+  .mall{font-family:'Trebuchet MS',sans-serif;font-weight:bold;font-size:.76rem;color:#fff;background:linear-gradient(135deg,var(--violet),var(--night));border-radius:20px;padding:7px 16px;display:inline-block;margin-bottom:9px;letter-spacing:.02em;box-shadow:var(--shadow)}
+  .mall .m2{color:var(--gold)}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="progwrap"><div class="inner"><span class="scoretxt" id="stxt">⭐ 0</span><span class="progtxt" id="ptxt">0%</span><div class="progbar"><div class="progfill" id="pfill"></div></div></div></div>
+
+  <header>
+    <div class="mall">🛍️ PRISM Shopping Mall: <span class="m2">ช้อปด่านซ่อม เสริมรากก่อนเริ่มเขียน</span></div>
+    <div class="lvband">Level 4 · Mastery <span class="lvdots"><i></i><i></i><i></i><i></i></span></div>
+    <h1>My Paragraph, Both Sides - <span class="glow">the full picture</span></h1>
+    <p class="sub">Join everything into one strong paragraph. / ร้อยทุกอย่างเป็นย่อหน้าเดียว</p>
+      <div class="steps"><span class="step"><b>1</b> Input</span><span class="step"><b>2</b> Learn</span><span class="step"><b>3</b> Practice</span><span class="step"><b>4</b> AI Support</span><span class="step"><b>5</b> Reflect</span></div>
+    <div class="timebadge">🧰 PRE-CLASS · ซ่อมราก FANBOYS รายบุคคล</div> <div class="timebadge">🛒 Learning Shopping · Self-paced · ราว 8 นาที</div>
+  </header>
+
+  <div class="card">
+    <div class="idbar">
+      <div class="ih">👤 ข้อมูลนักเรียน — กรอกก่อนเริ่ม เพื่อใช้สร้างรายงานส่งครูใน Google Classroom</div>
+      <div class="idrow">
+        <div class="fld"><label>ชื่อ-สกุล / Name</label><input id="stuName" type="text" placeholder="เช่น สมหญิง ใจดี"></div>
+        <div class="fld small"><label>ห้อง / Class</label><input id="stuRoom" type="text" placeholder="ม.3/1"></div>
+        <div class="fld small"><label>เลขที่ / No.</label><input id="stuNo" type="text" placeholder="12"></div>
+      </div>
+      <div class="idrow" style="margin-top:8px">
+        <div class="fld"><label>อีเมลโรงเรียน / School Email <span style="color:var(--gold-deep)">* สำหรับ PRISM</span></label><input id="stuEmail" type="email" placeholder="เช่น 12345@school.ac.th"></div>
+      </div>
+    </div>
+
+    <div class="goal">Goal: Write a full Discuss-Both-Views paragraph with advanced connectors, examples, and a clear opinion. / เขียนย่อหน้าเต็ม ใช้ตัวเชื่อมระดับสูง มีตัวอย่าง และความเห็นที่ชัด</div>
+
+        <div class="goal" style="border-left-color:var(--gold)">🧭 <b>ด่านซ่อมเสริมก่อนเรียน (Pre-Class)</b> — ฝึก FANBOYS ให้แม่นตามจังหวะของตัวเอง เพื่อเตรียมความพร้อมเข้าสู่ยูนิตหลัก <i>Discuss Both Views and Give an Opinion</i> ในห้องเรียน / Fix your FANBOYS roots before the main writing unit.</div>
+
+        <div class="winbadge" id="winbadge">🎉 You finished every practice question! Small win unlocked. / ทำครบทุกข้อแล้ว เก่งมาก!</div>
+
+    <div class="stepbanner"><span class="sn">STEP 1</span><span class="st">Input · ภาพ คำศัพท์ และคำถามนำเข้า<small>Warm-up: activate what you already know / กระตุ้นความรู้เดิมก่อนเรียน</small></span><span class="tm">⏱ 1 นาที</span></div>
+    <div class="secttl"><span class="dot"></span>Warm-up — Quick tap! / วอร์มสมอง แตะตอบไว ๆ</div>
+    <div id="inputWarm"></div>
+
+    <div class="stepbanner"><span class="sn">STEP 2</span><span class="st">Learn · เรียนรู้ 1 แนวคิดหลัก<small>One learning objective only / วันนี้เรียนแค่เรื่องเดียว โฟกัสเต็มที่</small></span><span class="tm">⏱ 2 นาที</span></div>
+    <div class="secttl"><span class="dot"></span>Advanced connectors / ตัวเชื่อมระดับสูง</div>
+    <div class="model">
+      <div class="row"><span class="tag t-c">However</span> strong contrast / ขัดแย้ง</div>
+      <div class="row"><span class="tag t-c">On the other hand</span> the second view / มุมที่สอง</div>
+      <div class="row"><span class="tag t-c">Although</span> concedes a point / ยอมรับบางส่วน</div>
+      <div class="row"><span class="tag t-c">Therefore</span> concludes / สรุปผล</div>
+    </div>
+    <p class="note">You already know FANBOYS + because + while. Now add these. / รู้ FANBOYS + because + while แล้ว เพิ่มชุดนี้</p>
+
+    <div class="secttl"><span class="dot"></span>The model paragraph - tap each sentence / ย่อหน้าตัวอย่าง แตะแต่ละประโยค</div>
+    <div class="tapnote">Tap a sentence to reveal its job in the paragraph / แตะประโยคเพื่อดูหน้าที่</div>
+    <div class="imodel" id="imodel">
+      <span class="s topic" data-part="0">People have always wondered whether bird superstitions are true.</span>
+      <span class="s v1" data-part="1">Some people believe them because crows often appear after a battle, and this makes the birds seem like signs of death.</span>
+      <span class="s v2" data-part="2">However, others argue that these are just old wives' tales; for example, swallows eat insects simply because they are hungry, not because they bring luck.</span>
+      <span class="s op" data-part="3">In my opinion, some superstitions may hide a real reason, so they are worth studying rather than laughing at.</span>
+      <span class="s close" data-part="4">Therefore, we should think carefully before we dismiss an old belief.</span>
+    </div>
+    <div class="partlabel" id="plabel"></div>
+    <div class="legend5">
+      <span class="lg" style="background:var(--c-topic)">1 Topic</span>
+      <span class="lg" style="background:var(--c-v1)">2 View 1 + reason + example</span>
+      <span class="lg" style="background:var(--c-v2)">3 View 2 + reason + example</span>
+      <span class="lg" style="background:var(--c-op)">4 Opinion + reason</span>
+      <span class="lg" style="background:var(--c-close)">5 Closing</span>
+    </div>
+
+    <div class="stepbanner"><span class="sn">STEP 3</span><span class="st">Practice · ฝึกสั้น ๆ ทันที<small>Answer, get instant feedback, earn ⭐ / ตอบแล้วรู้ผลทันที เก็บดาวสะสม</small></span><span class="tm">⏱ 2 นาที</span></div>
+    <div class="secttl"><span class="dot"></span>Task A — Pick the advanced connector / เลือกตัวเชื่อมระดับสูง</div>
+    <div id="chooseA"></div>
+
+    <div class="secttl"><span class="dot"></span>Task A2 — FANBOYS ยังอยู่ในย่อหน้าเต็ม / FANBOYS inside the full paragraph</div>
+    <div id="fanRev"></div>
+
+    <div class="secttl"><span class="dot"></span>Task B — Order the full paragraph / เรียงย่อหน้าเต็ม</div>
+    <div id="orderB"></div>
+
+    <div class="stepbanner"><span class="sn">STEP 4</span><span class="st">Write + AI Support · เขียนแล้วให้ AI ช่วยตรวจ<small>Think → Write → Ask AI → Revise / คิดก่อน เขียนก่อน แล้วจึงถาม AI</small></span><span class="tm">⏱ 2 นาที</span></div>
+    <div class="secttl"><span class="dot"></span>Your writing task / โจทย์การเขียน</div>
+    <div class="ielts">
+      <div class="ribbon">Writing Task · Discuss Both Views</div>
+      <div class="prompt">Some people believe that old superstitions about birds carry real meaning. Others think they are nothing more than old tales with no truth.<br><br><b>Discuss both views and give your own opinion.</b></div>
+      <div class="instr">Write one paragraph (5-7 sentences). Use the 5-part shape above. Spend about 15 minutes. / เขียน 1 ย่อหน้า 5-7 ประโยค ตามโครง 5 ส่วน ใช้เวลาราว 15 นาที</div>
+    </div>
+
+    <button class="rubric-btn" onclick="openRubric()">🎯 See how this is scored / ดูเกณฑ์ให้คะแนน</button>
+
+    <div class="secttl" style="margin-top:18px"><span class="dot"></span>Write your paragraph / เขียนย่อหน้าของคุณ</div>
+    <div class="chips">
+      <button class="chip" onclick="ins(&#39;People have always wondered whether &#39;)">+ topic opener</button>
+      <button class="chip" onclick="ins(&#39; On the other hand, others argue that &#39;)">+ On the other hand</button>
+      <button class="chip" onclick="ins(&#39; for example, &#39;)">+ for example</button>
+      <button class="chip" onclick="ins(&#39; Although &#39;)">+ Although</button>
+      <button class="chip" onclick="ins(&#39; Therefore, &#39;)">+ Therefore,</button>
+    </div>
+    <textarea id="w" placeholder="People have always wondered whether bird superstitions are true. Some people believe..."></textarea>
+    <div class="counter">Words: <b id="cw">0</b> · aim for 60-90</div>
+    <div class="wstat" id="wstat"></div>
+
+    <div class="aibox">
+      <div class="lead">AI ตรวจเฉพาะระดับประโยคเท่านั้น (ไวยากรณ์และตัวเชื่อม) — กดคัดลอก Prompt แล้ววางย่อหน้าของเราต่อท้ายในแชต AI</div>
+      <div class="role">Task response, balance, and organisation are scored by your teacher. / การตอบโจทย์ ความสมดุล และการจัดระเบียบ ครูเป็นผู้ให้คะแนน</div>
+      <div class="promptbox" id="prompt">ช่วยตรวจย่อหน้าของฉัน เฉพาะไวยากรณ์ระดับประโยคเท่านั้น ได้แก่ ลำดับประธาน-กริยา-กรรม ความสอดคล้องประธานกับกริยา และการใช้ตัวเชื่อม (FANBOYS: and, but, or, so รวมถึง However, Although, Therefore) โดยตอบเป็นภาษาไทยที่นักเรียน ม.3 เข้าใจง่าย และยกตัวอย่างเป็นภาษาอังกฤษ ห้ามวิจารณ์ความคิดของฉัน และห้ามเขียนแก้ให้ ให้ชี้ประโยคที่อาจมีปัญหาโครงสร้างเป็นภาษาไทย พร้อมตัวอย่างโครงสร้างที่ถูกต้องเป็นภาษาอังกฤษ (คนละเนื้อหากับของฉัน) แล้วถามคำถามชวนคิดให้ฉันแก้ไขด้วยตัวเอง นี่คือย่อหน้าของฉัน:</div>
+      <button class="ghostbtn" onclick="cpPrompt(this)">📋 คัดลอก Prompt (Copy)</button>
+      <button class="ghostbtn" onclick="cpEssay(this)" style="margin-left:6px">📄 คัดลอกย่อหน้าของฉัน (Copy)</button>
+    </div>
+
+    <div class="stepbanner"><span class="sn">STEP 5</span><span class="st">Reflect · สะท้อนการเรียนรู้<small>What did I learn today? / วันนี้ฉันได้เรียนรู้อะไร</small></span><span class="tm">⏱ 1 นาที</span></div>
+    <div class="secttl"><span class="dot"></span>Self-check before you hand in / ตรวจเองก่อนส่ง</div>
+    <div class="reflect">
+      <label><input type="checkbox"> All 5 parts are there. / มีครบ 5 ส่วน</label>
+      <label><input type="checkbox"> Both views have a reason AND an example. / สองมุมมีเหตุผลและตัวอย่าง</label>
+      <label><input type="checkbox"> My opinion is clear, with a reason. / ความเห็นชัด มีเหตุผล</label>
+      <label><input type="checkbox"> I used advanced connectors (However / Although / Therefore). / ใช้ตัวเชื่อมระดับสูง</label>
+      <label><input type="checkbox"> Every sentence still has S + V + O. / ทุกประโยคยังครบ S+V+O</label>
+    </div>
+
+    
+    <div class="secttl"><span class="dot"></span>Reflect — What did I learn today? / สะท้อนการเรียนรู้</div>
+    <div class="reflectstep">
+      <div class="rh">One thing I can do now that I could not do before / สิ่งที่ทำได้แล้ว</div>
+      <textarea id="refl1" placeholder="Today I learned to..."></textarea>
+      <div class="q">Did the AI give me the answer, or ask me to think? Did I check it? / AI ตอบให้เลย หรือให้เราคิดเอง และเราตรวจสอบไหม</div>
+      <textarea id="refl2" placeholder="The AI asked me... I checked..."></textarea>
+    </div>
+
+    
+    <div class="stepbanner"><span class="sn">SUBMIT</span><span class="st">ส่งงานเข้า Google Classroom<small>ระบบสรุปคะแนนอัตโนมัติ พร้อมรหัสยืนยันสำหรับครู</small></span><span class="tm">✅ 1 นาที</span></div>
+    <div class="submitcard">
+      <h3>📤 สรุปคะแนน &amp; ส่งงาน</h3>
+      <div class="ssub">คะแนนอัปเดตอัตโนมัติจากกิจกรรมทุกข้อในหน้านี้ / Your score updates live as you work.</div>
+      <div class="scoregrid">
+        <div class="scell"><div class="sv" id="ssPr">0/0</div><div class="sl">Practice ⭐</div></div>
+        <div class="scell"><div class="sv" id="ssWr">0/0</div><div class="sl">Writing ✍️</div></div>
+        <div class="scell"><div class="sv" id="ssRf">0/2</div><div class="sl">Reflect 💭</div></div>
+        <div class="scell"><div class="sv" id="ssTt">0/0</div><div class="sl">Total 🏆</div></div>
+      </div>
+      <button class="sbtn vio" onclick="ML.show()">👀 ดูรายงานคะแนน</button>
+      <button class="sbtn gold" onclick="ML.copy(this)">📋 คัดลอกรายงานส่งครู</button>
+      <button class="sbtn ghost" onclick="ML.download()">💾 ดาวน์โหลดไฟล์ .txt</button>
+      <div class="warn" id="subwarn"></div>
+      <div class="reportbox" id="reportbox"></div>
+      <div class="submitnote">📌 <b>วิธีส่งใน Google Classroom:</b> ① กด "คัดลอกรายงานส่งครู" ② เปิดงานชิ้นนี้ใน Google Classroom ③ วางข้อความในช่อง "ความคิดเห็นส่วนตัวถึงครู" <b>หรือ</b>แนบไฟล์ .txt ที่ดาวน์โหลด ④ กดปุ่ม "ส่ง" — รายงานมี<b>รหัสยืนยัน</b>ให้ครูตรวจสอบความถูกต้องได้</div>
+    </div>
+
+    <div style="text-align:right;margin-top:12px"><button class="mini" onclick="window.print()">Print / Save PDF</button></div>
+  </div>
+</div>
+
+<!-- RUBRIC MODAL -->
+<div class="overlay" id="overlay" onclick="if(event.target===this)closeRubric()">
+  <div class="sheet">
+    <div class="grab"></div>
+    <h3>How your paragraph is scored</h3>
+    <div class="h3sub">PRISM 5 dimensions · each scored 1-4 / เกณฑ์ PRISM 5 มิติ ให้ระดับ 1-4</div>
+
+    <div class="dim">
+      <div class="dh"><span class="code" style="background:#7c5cc4">TR</span><span><span class="dname">Task Response</span><br><span class="dth">ตอบโจทย์ครบไหม</span></span></div>
+      <div class="band"><b>4 High</b> Both views + clear opinion, all on topic. / สองมุม + ความเห็นชัด ตรงประเด็น</div>
+      <div class="band"><b>2 Mid</b> One view weak, or opinion unclear. / มุมหนึ่งอ่อน หรือความเห็นไม่ชัด</div>
+      <div class="band"><b>1 Low</b> Only one side, or off topic. / มุมเดียว หรือออกนอกเรื่อง</div>
+    </div>
+
+    <div class="dim">
+      <div class="dh"><span class="code" style="background:#1b6e9b">CC</span><span><span class="dname">Coherence &amp; Cohesion</span><br><span class="dth">การลำดับและตัวเชื่อม</span></span></div>
+      <div class="band"><b>4 High</b> 5 parts in order, smooth connectors. / ครบ 5 ส่วน เรียงลื่น</div>
+      <div class="band"><b>2 Mid</b> Order mostly OK, few connectors. / ลำดับพอได้ ตัวเชื่อมน้อย</div>
+      <div class="band"><b>1 Low</b> Jumbled, no connectors. / สับสน ไม่มีตัวเชื่อม</div>
+    </div>
+
+    <div class="dim">
+      <div class="dh"><span class="code" style="background:#c4881a">LR</span><span><span class="dname">Lexical Resource</span><br><span class="dth">คลังคำศัพท์</span></span></div>
+      <div class="band"><b>4 High</b> Varied, accurate topic words. / คำหลากหลาย ตรงเรื่อง</div>
+      <div class="band"><b>2 Mid</b> Basic words, some repetition. / คำพื้นฐาน ซ้ำบ้าง</div>
+      <div class="band"><b>1 Low</b> Very limited, unclear words. / จำกัดมาก ไม่ชัด</div>
+    </div>
+
+    <div class="dim">
+      <div class="dh"><span class="code" style="background:#3a9d6b">GRA</span><span><span class="dname">Grammatical Range &amp; Accuracy</span><br><span class="dth">ความถูกต้องไวยากรณ์</span></span></div>
+      <div class="band"><b>4 High</b> Mix of simple + joined sentences, few errors. / ประโยคหลากหลาย ผิดน้อย</div>
+      <div class="band"><b>2 Mid</b> Mostly simple, some errors. / ส่วนใหญ่ประโยคเดียว ผิดบ้าง</div>
+      <div class="band"><b>1 Low</b> Many errors, hard to read. / ผิดมาก อ่านยาก</div>
+    </div>
+
+    <div class="dim">
+      <div class="dh"><span class="code" style="background:#b14b8e">ME</span><span><span class="dname">Mechanics</span><br><span class="dth">เครื่องหมาย/สะกด/ตัวพิมพ์</span></span></div>
+      <div class="band"><b>4 High</b> Capitals, full stops, spelling correct. / ตัวพิมพ์ จุด สะกด ถูก</div>
+      <div class="band"><b>2 Mid</b> Some slips in punctuation/spelling. / ผิดบ้าง</div>
+      <div class="band"><b>1 Low</b> Frequent slips that distract. / ผิดบ่อยจนสะดุด</div>
+    </div>
+
+    <button class="closebtn" onclick="closeRubric()">Got it / เข้าใจแล้ว</button>
+  </div>
+</div>
+
+<script>
+// clickable full model paragraph
+var PARTS=[
+  {pt:"1 · Topic sentence",th:"ประโยคนำ - เปิดประเด็นที่ถกเถียง",color:"var(--c-topic)"},
+  {pt:"2 · View 1 + reason + example",th:"มุมที่หนึ่ง + เหตุผล + ตัวอย่าง",color:"var(--c-v1)"},
+  {pt:"3 · View 2 + reason + example",th:"มุมตรงข้าม + เหตุผล + ตัวอย่าง (However / for example)",color:"var(--c-v2)"},
+  {pt:"4 · Your opinion + reason",th:"ความเห็นตนเอง + เหตุผล (In my opinion / so)",color:"var(--c-op)"},
+  {pt:"5 · Closing sentence",th:"ประโยคสรุป (Therefore)",color:"var(--c-close)"}
+];
+var label=document.getElementById("plabel");
+document.querySelectorAll("#imodel .s").forEach(function(span){
+  span.onclick=function(){
+    var on=span.classList.contains("on");
+    document.querySelectorAll("#imodel .s").forEach(function(s){s.classList.remove("on")});
+    if(on){label.classList.remove("show");return}
+    span.classList.add("on");
+    var p=PARTS[+span.dataset.part];
+    label.style.background=p.color;
+    label.innerHTML='<span class="pt">'+p.pt+'</span>'+p.th;
+    label.classList.add("show");
+  };
+});
+
+// rubric modal
+function openRubric(){document.getElementById("overlay").classList.add("show");document.body.style.overflow="hidden"}
+function closeRubric(){document.getElementById("overlay").classList.remove("show");document.body.style.overflow=""}
+
+function buildMCQ(id,items){var c=document.getElementById(id);if(!c)return;c.innerHTML="";items.forEach(function(it){
+  var ex=document.createElement("div");ex.className='ex';ex.dataset.auto='1';
+  var opts=it.o.map(function(o,j){return '<button class="opt" data-j="'+j+'">'+o+'</button>'}).join('');
+  ex.innerHTML='<div class="qline">'+it.q+(it.qth?'<br><span class="qth">'+it.qth+'</span>':'')+'</div><div class="opts">'+opts+'</div><div class="fb"></div>';
+  var tries=0,solved=false;
+  ex.querySelectorAll(".opt").forEach(function(btn){btn.onclick=function(){if(solved)return;var j=+btn.dataset.j;tries++;
+    var fb=ex.querySelector(".fb");
+    if(it.all||j===it.a){solved=true;var pts=(it.all||tries===1)?2:1;
+      ex.querySelectorAll(".opt").forEach(function(o){o.classList.add("locked");if(+o.dataset.j===j)o.classList.add("correct")});
+      ex.dataset.pts=pts;ex.dataset.done="1";
+      fb.className="fb show good";fb.innerHTML=(it.all?"":(tries===1?"Correct! ":"Correct! "))+it.why;
+      ML.pop(btn,"+"+pts+" \u2B50");ML.refresh();
+    }else{
+      btn.classList.add("wrong");btn.disabled=true;
+      if(tries>=2){solved=true;ex.dataset.pts=0;ex.dataset.done="1";
+        ex.querySelectorAll(".opt").forEach(function(o){o.classList.add("locked");if(+o.dataset.j===it.a){o.classList.add("reveal");o.classList.add("correct")}});
+        fb.className="fb show bad";fb.innerHTML="The answer is shown in green. / \u0E14\u0E39\u0E04\u0E33\u0E15\u0E2D\u0E1A\u0E2A\u0E35\u0E40\u0E02\u0E35\u0E22\u0E27 "+it.why;ML.refresh();
+      }else{
+        fb.className="fb show bad";fb.innerHTML="Not yet \u2014 one more try! / \u0E22\u0E31\u0E07\u0E44\u0E21\u0E48\u0E43\u0E0A\u0E48 \u0E25\u0E2D\u0E07\u0E2D\u0E35\u0E01\u0E04\u0E23\u0E31\u0E49\u0E07 (\u0E40\u0E2B\u0E25\u0E37\u0E2D 1 \u0E04\u0E23\u0E31\u0E49\u0E07)";
+      }
+    }
+  }});
+  c.appendChild(ex)})}
+
+buildMCQ("inputWarm",[
+  {q:'\uD83D\uDD2E Before we start: Do YOU believe old superstitions can be true?',qth:'\u0E44\u0E21\u0E48\u0E21\u0E35\u0E04\u0E33\u0E15\u0E2D\u0E1A\u0E1C\u0E34\u0E14 \u2014 \u0E19\u0E35\u0E48\u0E04\u0E37\u0E2D "\u0E04\u0E27\u0E32\u0E21\u0E40\u0E2B\u0E47\u0E19" \u0E02\u0E2D\u0E07\u0E04\u0E38\u0E13 \u0E40\u0E01\u0E47\u0E1A\u0E44\u0E27\u0E49\u0E43\u0E0A\u0E49\u0E15\u0E2D\u0E19\u0E40\u0E02\u0E35\u0E22\u0E19',o:["Yes, some can be true","No, they are just old tales","I am not sure yet"],all:true,why:'No wrong answer \u2014 you just formed your OPINION. Keep it for your paragraph! / \u0E04\u0E38\u0E13\u0E40\u0E1E\u0E34\u0E48\u0E07\u0E2A\u0E23\u0E49\u0E32\u0E07 "\u0E04\u0E27\u0E32\u0E21\u0E40\u0E2B\u0E47\u0E19" \u0E41\u0E25\u0E49\u0E27 \u0E40\u0E01\u0E47\u0E1A\u0E44\u0E27\u0E49\u0E43\u0E0A\u0E49\u0E43\u0E19\u0E22\u0E48\u0E2D\u0E2B\u0E19\u0E49\u0E32'},
+  {q:'\uD83D\uDCD6 Vocabulary: "superstition" means...',qth:'\u0E04\u0E33\u0E19\u0E35\u0E49\u0E2D\u0E22\u0E39\u0E48\u0E43\u0E19\u0E42\u0E08\u0E17\u0E22\u0E4C\u0E40\u0E02\u0E35\u0E22\u0E19\u0E02\u0E2D\u0E07\u0E04\u0E38\u0E13',o:["a belief in luck and signs / \u0E04\u0E27\u0E32\u0E21\u0E40\u0E0A\u0E37\u0E48\u0E2D\u0E42\u0E0A\u0E04\u0E25\u0E32\u0E07","a kind of science / \u0E27\u0E34\u0E17\u0E22\u0E32\u0E28\u0E32\u0E2A\u0E15\u0E23\u0E4C","a bird / \u0E19\u0E01"],a:0,why:'superstition = \u0E04\u0E27\u0E32\u0E21\u0E40\u0E0A\u0E37\u0E48\u0E2D\u0E42\u0E0A\u0E04\u0E25\u0E32\u0E07'},
+  {q:'\uD83D\uDCD6 Vocabulary: "omen" means...',o:["a song / \u0E40\u0E1E\u0E25\u0E07","a sign of good or bad luck / \u0E25\u0E32\u0E07\u0E1A\u0E2D\u0E01\u0E40\u0E2B\u0E15\u0E38","a farmer / \u0E0A\u0E32\u0E27\u0E19\u0E32"],a:1,why:'omen = \u0E25\u0E32\u0E07\u0E1A\u0E2D\u0E01\u0E40\u0E2B\u0E15\u0E38'}
+]);
+buildMCQ("fanRev",[
+  {q:'Some people believe them because crows appear after battles, ___ this makes the birds seem like signs of death.',qth:'(View 1: adding / \u0e40\u0e1e\u0e34\u0e48\u0e21)',o:["and","or","nor"],a:0,why:'"and" \u0e15\u0e48\u0e2d\u0e04\u0e27\u0e32\u0e21\u0e43\u0e19 View 1 \u2014 FANBOYS \u0e17\u0e33\u0e07\u0e32\u0e19\u0e42\u0e14\u0e14\u0e40\u0e14\u0e48\u0e19\u0e43\u0e19\u0e22\u0e48\u0e2d\u0e2b\u0e19\u0e49\u0e32\u0e08\u0e23\u0e34\u0e07'},
+  {q:'I think superstitions may hide a real reason, ___ they are worth studying.',qth:'(Opinion: result / \u0e1c\u0e25)',o:["for","so","yet"],a:1,why:'"so" \u0e40\u0e0a\u0e37\u0e48\u0e2d\u0e21\u0e04\u0e27\u0e32\u0e21\u0e40\u0e2b\u0e47\u0e19\u0e40\u0e02\u0e49\u0e32\u0e01\u0e31\u0e1a\u0e02\u0e49\u0e2d\u0e40\u0e2a\u0e19\u0e2d'},
+  {q:'Is a crow a wise guide, ___ is it a bad omen?',qth:'(topic question: choice / \u0e15\u0e31\u0e27\u0e40\u0e25\u0e37\u0e2d\u0e01)',o:["so","and","or"],a:2,why:'"or" \u0e40\u0e2a\u0e19\u0e2d\u0e2a\u0e2d\u0e07\u0e17\u0e32\u0e07\u0e40\u0e25\u0e37\u0e2d\u0e01 \u2014 \u0e43\u0e0a\u0e49\u0e40\u0e1b\u0e34\u0e14\u0e1b\u0e23\u0e30\u0e40\u0e14\u0e47\u0e19\u0e44\u0e14\u0e49\u0e14\u0e49\u0e27\u0e22'}
+]);
+
+
+buildMCQ("chooseA",[
+  {q:'Some believe crows are wise. ______, others see them as bad omens.',qth:'(contrast / ขัดแย้ง)',o:["Therefore","However","Because"],a:1,why:'"However" opens a contrasting sentence. / However = ขัดแย้ง'},
+  {q:'______ some people doubt these tales, they are still told today.',qth:'(concede / ยอมรับบางส่วน)',o:["Although","So","And"],a:0,why:'"Although" concedes one idea first. / Although = ยอมรับบางส่วน'},
+  {q:'Both views have some truth. ______, we should not judge too quickly.',qth:'(conclude / สรุป)',o:["However","Therefore","While"],a:1,why:'"Therefore" introduces a conclusion. / Therefore = สรุป'},
+  {q:'Crows are feared by many. ______, scientists see them as intelligent.',qth:'(second view / มุมที่สอง)',o:["On the other hand","Because","So"],a:0,why:'"On the other hand" introduces the opposite side. / มุมที่สอง'}
+]);
+
+function buildOrder(id,items){var c=document.getElementById(id);c.innerHTML="";
+  var ex=document.createElement("div");ex.className="ex";ex.dataset.auto="1";
+  var sh=items.slice().sort(function(){return Math.random()-.5});
+  var tiles=sh.map(function(it){return '<button class="tile" style="text-align:left;max-width:100%" data-n="'+it.n+'">'+it.text+'</button>'}).join('');
+  ex.innerHTML='<div class="qline qth">Tap the 5 sentences in order (1-5) / แตะ 5 ประโยคตามลำดับ</div><div class="tiles" style="flex-direction:column">'+tiles+'</div><div class="build"><span class="ph">your order...</span></div><div><button class="mini ghost">reset</button><button class="mini">check</button></div><div class="fb"></div>';
+  var build=ex.querySelector(".build"),picked=[];
+  function redraw(){if(!picked.length){build.innerHTML='<span class="ph">your order...</span>';return}build.innerHTML=picked.map(function(n,i){return '<span class="bt">'+(i+1)+'</span>'}).join(' -> ')}
+  ex.querySelectorAll(".tile").forEach(function(t){t.onclick=function(){if(t.classList.contains("picked"))return;t.classList.add("picked");picked.push(+t.dataset.n);redraw()}});
+  ex.querySelectorAll(".mini")[0].onclick=function(){picked=[];ex.querySelectorAll(".tile").forEach(function(t){t.classList.remove("picked")});redraw();ex.querySelector(".fb").className="fb"};
+  ex.querySelectorAll(".mini")[1].onclick=function(){var fb=ex.querySelector(".fb");var ok=picked.join("")==="12345";ex.dataset.tries=(+(ex.dataset.tries||0))+1;if(ok&&!ex.dataset.done){var p=(+ex.dataset.tries===1)?2:1;ex.dataset.pts=p;ex.dataset.done="1";ML.pop(this,"+"+p+" \u2B50")}fb.className="fb show "+(ok?"good":"bad");fb.innerHTML=ok?"Perfect: topic -> view 1 -> view 2 -> opinion -> closing! / เรียงถูก":"Topic first, 'Therefore' last. / ประโยคนำก่อน จบที่ Therefore";ML.refresh()};
+  c.appendChild(ex)}
+
+buildOrder("orderB",[
+  {n:1,text:"People have always wondered whether bird superstitions are true."},
+  {n:2,text:"Some people believe them because crows often appear after battles."},
+  {n:3,text:"However, others argue that these are just old wives' tales with no proof."},
+  {n:4,text:"In my opinion, some superstitions may have real reasons behind them."},
+  {n:5,text:"Therefore, we should think carefully before we laugh at an old tale."}
+]);
+
+var PROMPT="ช่วยตรวจย่อหน้าของฉัน เฉพาะไวยากรณ์ระดับประโยคเท่านั้น ได้แก่ ลำดับประธาน-กริยา-กรรม ความสอดคล้องประธานกับกริยา และการใช้ตัวเชื่อม (FANBOYS: and, but, or, so รวมถึง However, Although, Therefore) โดยตอบเป็นภาษาไทยที่นักเรียน ม.3 เข้าใจง่าย และยกตัวอย่างเป็นภาษาอังกฤษ ห้ามวิจารณ์ความคิดของฉัน และห้ามเขียนแก้ให้ ให้ชี้ประโยคที่อาจมีปัญหาโครงสร้างเป็นภาษาไทย พร้อมตัวอย่างโครงสร้างที่ถูกต้องเป็นภาษาอังกฤษ (คนละเนื้อหากับของฉัน) แล้วถามคำถามชวนคิดให้ฉันแก้ไขด้วยตัวเอง นี่คือย่อหน้าของฉัน:";
+document.getElementById("prompt").textContent=PROMPT;
+function ins(t){var a=document.getElementById("w");a.value=(a.value||"")+t;a.focus();upd()}
+function upd(){var s=document.getElementById("w").value.trim();document.getElementById("cw").textContent=s?s.split(/\s+/).length:0}
+document.getElementById("w").addEventListener("input",upd);
+function flash(b,m){var o=b.textContent;b.textContent=m;b.classList.add("done");setTimeout(function(){b.textContent=o;b.classList.remove("done")},1600)}
+function cpPrompt(b){if(navigator.clipboard)navigator.clipboard.writeText(PROMPT).then(function(){flash(b,"Copied! / คัดลอกแล้ว")})}
+function cpEssay(b){var t=document.getElementById("w").value.trim();if(navigator.clipboard&&t)navigator.clipboard.writeText(t).then(function(){flash(b,"Copied! / คัดลอกแล้ว")})}
+
+// ---- Microlearning v2: live score + progress + Google Classroom submit ----
+window.ML_CFG={level:"Level 4",title:"My Paragraph, Both Sides",minWords:50,writePts:6};
+var ML=(function(){
+  var CFG=window.ML_CFG;
+  function words(t){t=(t||"").trim();return t?t.split(/\s+/).length:0}
+  function pop(el,msg){try{var r=el.getBoundingClientRect();var s=document.createElement("span");s.className="ptspop";s.textContent=msg;s.style.left=Math.max(8,r.left)+"px";s.style.top=(r.top-6)+"px";document.body.appendChild(s);setTimeout(function(){s.remove()},1000)}catch(e){}}
+  var confettiDone=false;
+  function confetti(){if(confettiDone)return;confettiDone=true;var em=["\uD83C\uDF89","\u2B50","\u2728","\uD83C\uDF8A","\uD83D\uDC9C","\uD83C\uDFC6"];
+    for(var i=0;i<26;i++){var s=document.createElement("span");s.className="confetti";s.textContent=em[i%em.length];s.style.left=(Math.random()*100)+"vw";s.style.animationDuration=(2.4+Math.random()*2)+"s";s.style.animationDelay=(Math.random()*0.7)+"s";document.body.appendChild(s);(function(x){setTimeout(function(){x.remove()},5600)})(s)}}
+  function state(){
+    var exes=document.querySelectorAll(".ex[data-auto]");
+    var pMax=exes.length*2,pPts=0,pDone=0;
+    exes.forEach(function(ex){if(ex.dataset.done){pDone++;pPts+= +(ex.dataset.pts||0)}});
+    var w=document.getElementById("w");var wc=w?words(w.value):0;var wOk=wc>=CFG.minWords;
+    var r1=document.getElementById("refl1"),r2=document.getElementById("refl2");
+    var rPts=((r1&&words(r1.value)>=3)?1:0)+((r2&&words(r2.value)>=3)?1:0);
+    var total=pPts+(wOk?CFG.writePts:0)+rPts;
+    var max=pMax+CFG.writePts+2;
+    var doneItems=pDone+(wOk?1:0)+(rPts===2?1:0);
+    var totalItems=exes.length+2;
+    return {pPts:pPts,pMax:pMax,pDone:pDone,pTotal:exes.length,wc:wc,wOk:wOk,rPts:rPts,total:total,max:max,pct:totalItems?Math.round(doneItems/totalItems*100):0}
+  }
+  function refresh(){
+    var s=state(),e;
+    if(e=document.getElementById("pfill"))e.style.width=s.pct+"%";
+    if(e=document.getElementById("ptxt"))e.textContent=s.pct+"%";
+    if(e=document.getElementById("stxt"))e.textContent="\u2B50 "+s.total+"/"+s.max;
+    if((e=document.getElementById("winbadge"))&&s.pDone>0&&s.pDone===s.pTotal)e.classList.add("show");
+    if(e=document.getElementById("wstat")){e.textContent=s.wOk?("\u2713 "+s.wc+" words \u2014 writing complete +"+CFG.writePts+" \u2B50 / \u0E40\u0E02\u0E35\u0E22\u0E19\u0E04\u0E23\u0E1A\u0E41\u0E25\u0E49\u0E27"):("\u270D "+s.wc+"/"+CFG.minWords+" words minimum / \u0E02\u0E31\u0E49\u0E19\u0E15\u0E48\u0E33 "+CFG.minWords+" \u0E04\u0E33 \u0E08\u0E36\u0E07\u0E08\u0E30\u0E44\u0E14\u0E49\u0E04\u0E30\u0E41\u0E19\u0E19");e.className="wstat"+(s.wOk?" ok":"")}
+    if(e=document.getElementById("ssPr"))e.textContent=s.pPts+"/"+s.pMax;
+    if(e=document.getElementById("ssWr"))e.textContent=(s.wOk?CFG.writePts:0)+"/"+CFG.writePts;
+    if(e=document.getElementById("ssRf"))e.textContent=s.rPts+"/2";
+    if(e=document.getElementById("ssTt"))e.textContent=s.total+"/"+s.max;
+    if(s.pct===100)confetti();
+  }
+  function code(str){var h=0;for(var i=0;i<str.length;i++){h=(h*31+str.charCodeAt(i))>>>0}return ("00000000"+h.toString(36).toUpperCase()).slice(-8)}
+  function report(){
+    var s=state();
+    var n=((document.getElementById("stuName")||{}).value||"").trim();
+    var room=((document.getElementById("stuRoom")||{}).value||"").trim();
+    var no=((document.getElementById("stuNo")||{}).value||"").trim();
+    var em=((document.getElementById("stuEmail")||{}).value||"").trim();
+    var w=((document.getElementById("w")||{}).value||"").trim();
+    var r1=((document.getElementById("refl1")||{}).value||"").trim();
+    var r2=((document.getElementById("refl2")||{}).value||"").trim();
+    var d=new Date();var ts=d.toLocaleString();
+    var vc=code(n+"|"+room+"|"+no+"|"+em+"|"+s.total+"|"+s.pPts+"|"+d.toDateString());
+    return "==============================\n"+
+      "PRISM Micro-Report \u00B7 "+CFG.level+" (Pre-Class \u00B7 FANBOYS)\n"+CFG.title+"\n"+
+      "------------------------------\n"+
+      "\u0E0A\u0E37\u0E48\u0E2D: "+n+"\n\u0E2B\u0E49\u0E2D\u0E07: "+room+"   \u0E40\u0E25\u0E02\u0E17\u0E35\u0E48: "+no+"\n\u0E2D\u0E35\u0E40\u0E21\u0E25\u0E42\u0E23\u0E07\u0E40\u0E23\u0E35\u0E22\u0E19 (PRISM): "+(em||"-")+"\n\u0E27\u0E31\u0E19\u0E17\u0E35\u0E48/\u0E40\u0E27\u0E25\u0E32: "+ts+"\n"+
+      "------------------------------\n"+
+      "Practice (\u0E41\u0E1A\u0E1A\u0E1D\u0E36\u0E01): "+s.pPts+" / "+s.pMax+"\n"+
+      "Writing (\u0E07\u0E32\u0E19\u0E40\u0E02\u0E35\u0E22\u0E19): "+(s.wOk?CFG.writePts:0)+" / "+CFG.writePts+"  ("+s.wc+" \u0E04\u0E33)\n"+
+      "Reflect (\u0E2A\u0E30\u0E17\u0E49\u0E2D\u0E19\u0E04\u0E34\u0E14): "+s.rPts+" / 2\n"+
+      "TOTAL: "+s.total+" / "+s.max+"   Progress: "+s.pct+"%\n"+
+      "Verify code (\u0E23\u0E2B\u0E31\u0E2A\u0E22\u0E37\u0E19\u0E22\u0E31\u0E19): "+vc+"\n"+
+      "------------------------------\n"+
+      "\u0E07\u0E32\u0E19\u0E40\u0E02\u0E35\u0E22\u0E19\u0E02\u0E2D\u0E07\u0E19\u0E31\u0E01\u0E40\u0E23\u0E35\u0E22\u0E19:\n"+(w||"-")+"\n\n"+
+      "Reflection 1: "+(r1||"-")+"\nReflection 2: "+(r2||"-")+"\n"+
+      "==============================";
+  }
+  function validate(){
+    var n=((document.getElementById("stuName")||{}).value||"").trim();
+    var em=((document.getElementById("stuEmail")||{}).value||"").trim();
+    var warn=document.getElementById("subwarn");
+    var msg="";
+    if(!n)msg="\u0E01\u0E23\u0E38\u0E13\u0E32\u0E01\u0E23\u0E2D\u0E01 \u0E0A\u0E37\u0E48\u0E2D-\u0E2A\u0E01\u0E38\u0E25 (\u0E14\u0E49\u0E32\u0E19\u0E1A\u0E19\u0E2A\u0E38\u0E14\u0E02\u0E2D\u0E07\u0E2B\u0E19\u0E49\u0E32) \u0E01\u0E48\u0E2D\u0E19\u0E2A\u0E23\u0E49\u0E32\u0E07\u0E23\u0E32\u0E22\u0E07\u0E32\u0E19\u0E2A\u0E48\u0E07\u0E04\u0E23\u0E39";
+    else if(!em||em.indexOf("@")<0)msg="\u0E01\u0E23\u0E38\u0E13\u0E32\u0E01\u0E23\u0E2D\u0E01 \u0E2D\u0E35\u0E40\u0E21\u0E25\u0E42\u0E23\u0E07\u0E40\u0E23\u0E35\u0E22\u0E19 (\u0E14\u0E49\u0E32\u0E19\u0E1A\u0E19\u0E2A\u0E38\u0E14\u0E02\u0E2D\u0E07\u0E2B\u0E19\u0E49\u0E32) \u0E43\u0E2B\u0E49\u0E16\u0E39\u0E01\u0E15\u0E49\u0E2D\u0E07 \u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E43\u0E0A\u0E49\u0E43\u0E19\u0E23\u0E30\u0E1A\u0E1A PRISM";
+    if(msg){if(warn){warn.textContent=msg;warn.classList.add("show")}return false}
+    if(warn)warn.classList.remove("show");return true;
+  }
+  function show(){if(!validate())return;refresh();var box=document.getElementById("reportbox");box.textContent=report();box.classList.add("show")}
+  function copy(btn){if(!validate())return;refresh();var r=report();var box=document.getElementById("reportbox");box.textContent=r;box.classList.add("show");
+    function done(){var o=btn.textContent;btn.textContent="\u2713 \u0E04\u0E31\u0E14\u0E25\u0E2D\u0E01\u0E41\u0E25\u0E49\u0E27 \u2014 \u0E44\u0E1B\u0E27\u0E32\u0E07\u0E43\u0E19 Google Classroom";setTimeout(function(){btn.textContent=o},2400)}
+    function fallback(){try{var ta=document.createElement("textarea");ta.value=r;document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove();done()}catch(e){}}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(r).then(done,fallback)}else{fallback()}
+  }
+  function download(){if(!validate())return;refresh();var r=report();
+    var n=(((document.getElementById("stuName")||{}).value)||"student").trim().replace(/\s+/g,"_");
+    var blob=new Blob(["\uFEFF"+r],{type:"text/plain;charset=utf-8"});
+    var a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="PRISM_L4_"+n+".txt";document.body.appendChild(a);a.click();
+    setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},400);
+  }
+  function init(){
+    document.addEventListener("click",function(e){if(e.target.closest(".opt")||e.target.closest(".mini"))setTimeout(refresh,80)});
+    ["w","refl1","refl2"].forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener("input",function(){clearTimeout(el._t);el._t=setTimeout(refresh,250)})});
+    window.addEventListener("load",function(){setTimeout(refresh,200)});
+    setTimeout(refresh,150);
+  }
+  return {pop:pop,refresh:refresh,init:init,show:show,copy:copy,download:download};
+})();
+ML.init();
+
+// ---- Learning Shopping: self-paced mission map (Data-Driven Personalized Learning) ----
+(function(){
+  var card=document.querySelector(".card");if(!card)return;
+  var kids=[].slice.call(card.childNodes);
+  var missions=[],cur=null;
+  kids.forEach(function(n){
+    if(n.nodeType===1&&n.classList&&n.classList.contains("stepbanner")){cur={banner:n,nodes:[n]};missions.push(cur)}
+    else if(cur){cur.nodes.push(n)}
+  });
+  if(missions.length<2)return;
+  var EMO=["\uD83D\uDC40","\uD83D\uDCD6","\uD83D\uDCAA","\u270D\uFE0F","\uD83D\uDCAD","\uD83D\uDCE4"];
+  missions.forEach(function(m,i){
+    var sec=document.createElement("section");sec.className="mission";sec.dataset.mi=i;
+    card.insertBefore(sec,m.nodes[0]);
+    m.nodes.forEach(function(n){sec.appendChild(n)});
+    m.el=sec;
+    var stEl=m.banner.querySelector(".st");
+    m.label=(m.banner.querySelector(".sn")||{}).textContent||("STEP "+(i+1));
+    m.title=stEl&&stEl.childNodes.length?stEl.childNodes[0].textContent:"";
+    m.time=(m.banner.querySelector(".tm")||{}).textContent||"";
+    var nav=document.createElement("div");nav.className="mnav";
+    nav.innerHTML='<button class="sbtn ghost">\uD83C\uDFEA \u0E01\u0E25\u0E31\u0E1A\u0E2B\u0E19\u0E49\u0E32\u0E40\u0E25\u0E37\u0E2D\u0E01\u0E20\u0E32\u0E23\u0E01\u0E34\u0E08</button>'
+      +(i<missions.length-1?'<button class="sbtn vio">\u0E20\u0E32\u0E23\u0E01\u0E34\u0E08\u0E16\u0E31\u0E14\u0E44\u0E1B \u2192</button>':"");
+    sec.appendChild(nav);
+    var bs=nav.querySelectorAll("button");
+    bs[0].onclick=function(){openShop()};
+    if(bs[1])bs[1].onclick=function(){openMission(i+1)};
+  });
+  var shop=document.createElement("div");shop.className="shop";shop.id="shop";
+  shop.innerHTML='<div class="shoph">\uD83D\uDED2 Learning Shopping \u2014 \u0E40\u0E25\u0E37\u0E2D\u0E01\u0E20\u0E32\u0E23\u0E01\u0E34\u0E08\u0E14\u0E49\u0E27\u0E22\u0E15\u0E31\u0E27\u0E40\u0E2D\u0E07<small>\u0E17\u0E33\u0E15\u0E32\u0E21\u0E25\u0E33\u0E14\u0E31\u0E1A 1\u21926 \u0E2B\u0E23\u0E37\u0E2D\u0E40\u0E25\u0E37\u0E2D\u0E01\u0E0B\u0E48\u0E2D\u0E21\u0E40\u0E09\u0E1E\u0E32\u0E30\u0E08\u0E38\u0E14\u0E17\u0E35\u0E48\u0E22\u0E31\u0E07\u0E44\u0E21\u0E48\u0E41\u0E21\u0E48\u0E19 (Self-paced) \u00B7 \u0E2A\u0E30\u0E2A\u0E21 \u2B50 \u0E44\u0E14\u0E49\u0E17\u0E38\u0E01\u0E20\u0E32\u0E23\u0E01\u0E34\u0E08 \u00B7 \u0E1B\u0E34\u0E14\u0E17\u0E49\u0E32\u0E22\u0E17\u0E35\u0E48\u0E20\u0E32\u0E23\u0E01\u0E34\u0E08 SUBMIT</small></div><div class="shopgrid" id="shopgrid"></div>';
+  card.insertBefore(shop,missions[0].el);
+  function wcnt(el){var t=(el&&el.value||"").trim();return t?t.split(/\s+/).length:0}
+  function stat(i){
+    var sec=missions[i].el;
+    var exs=sec.querySelectorAll(".ex[data-auto]");var d=0,p=0;
+    exs.forEach(function(e){if(e.dataset.done){d++;p+= +(e.dataset.pts||0)}});
+    var hasEx=exs.length>0,exOk=hasEx&&d===exs.length;
+    var w=sec.querySelector("#w");var wOk=!w||wcnt(w)>=((window.ML_CFG||{}).minWords||12);
+    var r1=sec.querySelector("#refl1"),r2=sec.querySelector("#refl2");
+    var rOk=!r1||(wcnt(r1)>=3&&r2&&wcnt(r2)>=3);
+    var parts=[];
+    if(hasEx)parts.push("\u2B50"+p+" \u00B7 "+d+"/"+exs.length);
+    if(w)parts.push(wOk?"\u270D\uFE0F\u2713":"\u270D\uFE0F\u2026");
+    if(r1)parts.push(rOk?"\uD83D\uDCAD\u2713":"\uD83D\uDCAD\u2026");
+    var done=(hasEx||w||r1)&&(!hasEx||exOk)&&wOk&&rOk;
+    return {txt:parts.join("  ")||"\uD83D\uDE80 \u0E2A\u0E48\u0E07\u0E40\u0E21\u0E37\u0E48\u0E2D\u0E17\u0E33\u0E04\u0E23\u0E1A",done:done};
+  }
+  function renderShop(){
+    var g=document.getElementById("shopgrid");if(!g)return;
+    g.innerHTML=missions.map(function(m,i){
+      var s=stat(i);
+      return '<button class="mcard'+(s.done?" done":"")+'" data-mi="'+i+'"><div class="me">'+(EMO[i]||"\u2B50")+'</div><div class="mn">'+m.label+' \u00B7 '+m.time+'</div><div class="mt">'+m.title+'</div><div class="mstat">'+s.txt+'</div></button>';
+    }).join("");
+    g.querySelectorAll(".mcard").forEach(function(b){b.onclick=function(){openMission(+b.dataset.mi)}});
+  }
+  function openShop(){
+    missions.forEach(function(m){m.el.classList.remove("open")});
+    renderShop();shop.classList.remove("hidden");
+    try{shop.scrollIntoView({behavior:"smooth",block:"start"})}catch(e){window.scrollTo(0,0)}
+  }
+  function openMission(i){
+    if(i>=missions.length)return openShop();
+    shop.classList.add("hidden");
+    missions.forEach(function(m,j){m.el.classList.toggle("open",j===i)});
+    try{missions[i].el.scrollIntoView({behavior:"smooth",block:"start"})}catch(e){}
+  }
+  document.addEventListener("click",function(e){if(e.target.closest(".opt")||e.target.closest(".mini"))setTimeout(renderShop,120)});
+  ["w","refl1","refl2","stuName","stuEmail"].forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener("input",function(){clearTimeout(el._st);el._st=setTimeout(renderShop,300)})});
+  window.SHOP={openShop:openShop,openMission:openMission,renderShop:renderShop};
+  renderShop();
+})();
+
+</script>
+
+
+</body></html>

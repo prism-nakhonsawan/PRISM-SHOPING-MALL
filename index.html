@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="th"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRISM Shopping Mall — ช้อปด่านซ่อม เสริมรากก่อนเริ่มเขียน</title>
+<style>
+  :root{
+    --night:#1a1430; --plum:#3d2b66; --violet:#7c5cc4; --lilac:#b79cf0;
+    --pale:#efe9fb; --mist:#f7f4fd; --gold:#e8b54a; --gold-deep:#c4881a;
+    --ink:#241b3d; --muted:#6b5e8a; --line:#ddd2f0; --ok:#3a9d6b;
+    --shadow:0 12px 40px -14px rgba(26,20,48,.4);
+    --l1:#3a9d6b; --l1bg:#e2f3ea; --l2:#3a7dc4; --l2bg:#e0ecfa;
+    --l3:#c4881a; --l3bg:#fbeed0; --l4:#7c5cc4; --l4bg:#ece2fb;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html{-webkit-text-size-adjust:100%}
+  body{font-family:'Georgia','Times New Roman',serif;background:linear-gradient(165deg,#f5f1fc,#eee7f8);color:var(--ink);min-height:100vh;line-height:1.6}
+  .app{max-width:720px;margin:0 auto;padding:0 16px 70px}
+  header{text-align:center;padding:30px 0 10px}
+  .mall{font-family:'Trebuchet MS',sans-serif;font-weight:bold;font-size:.78rem;color:#fff;background:linear-gradient(135deg,var(--violet),var(--night));border-radius:20px;padding:8px 18px;display:inline-block;margin-bottom:12px;letter-spacing:.02em;box-shadow:var(--shadow)}
+  .mall .m2{color:var(--gold)}
+  h1{font-size:2rem;line-height:1.1;color:var(--night)}
+  h1 .glow{color:var(--gold-deep)}
+  .sub{font-size:.88rem;color:var(--muted);margin-top:8px;font-style:italic}
+  .badges{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+  .timebadge{display:inline-block;font-family:'Trebuchet MS',sans-serif;font-size:.62rem;font-weight:bold;color:var(--gold-deep);background:#fdf3df;border:1px solid #f0e2c4;border-radius:20px;padding:5px 12px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow);margin:16px 0 14px}
+  .dirhead{display:flex;align-items:baseline;justify-content:space-between;gap:10px;border-bottom:2px solid var(--night);padding-bottom:9px;margin-bottom:4px}
+  .dirhead .dt{font-family:'Trebuchet MS',sans-serif;font-weight:bold;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--night)}
+  .dirhead .de{font-size:.7rem;color:var(--muted);font-style:italic}
+  .floor{display:flex;align-items:center;gap:13px;padding:15px 4px;border-bottom:1px dashed var(--line);text-decoration:none;color:var(--ink);transition:.15s;border-radius:10px}
+  .floor:last-of-type{border-bottom:none}
+  .floor:hover{background:var(--mist)}
+  .floor:active{transform:scale(.99)}
+  .fno{flex:0 0 52px;height:52px;border-radius:13px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Trebuchet MS',sans-serif;font-weight:bold}
+  .fno .n{font-size:1.25rem;line-height:1}
+  .fno .c{font-size:.5rem;letter-spacing:.08em;text-transform:uppercase;margin-top:2px}
+  .finfo{flex:1;min-width:0}
+  .finfo .fname{font-weight:bold;font-size:.98rem;color:var(--night)}
+  .finfo .fth{font-size:.78rem;color:var(--muted);font-style:italic}
+  .finfo .ffix{font-family:'Trebuchet MS',sans-serif;font-size:.66rem;font-weight:bold;margin-top:4px}
+  .fgo{flex:0 0 auto;font-family:'Trebuchet MS',sans-serif;font-weight:bold;font-size:.72rem;color:#fff;background:var(--violet);border-radius:9px;padding:9px 13px;white-space:nowrap}
+  .goal{font-size:.85rem;color:var(--muted);background:var(--mist);border-radius:10px;padding:12px 14px;border-left:3px solid var(--lilac)}
+  .goal b{color:var(--ink)}
+  .howto{background:linear-gradient(160deg,#fdfaf2,#fff);border:1.5px solid var(--gold);border-radius:13px;padding:14px 16px;font-size:.84rem;margin-top:12px}
+  .howto .ht{font-family:'Trebuchet MS',sans-serif;font-weight:bold;font-size:.74rem;color:var(--gold-deep);margin-bottom:6px}
+  .howto ol{margin:0 0 0 20px}
+  .howto li{margin:4px 0}
+  footer{text-align:center;font-size:.72rem;color:var(--muted);font-style:italic;margin-top:18px;line-height:1.8}
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <div class="mall">🛍️ PRISM Shopping Mall: <span class="m2">ช้อปด่านซ่อม เสริมรากก่อนเริ่มเขียน</span></div>
+    <h1>ยินดีต้อนรับสู่ <span class="glow">ห้าง 4 ชั้น</span></h1>
+    <p class="sub">ซ่อมราก FANBOYS ให้แข็งแรง ก่อนเข้ายูนิตเขียนหลัก Discuss Both Views and Give an Opinion</p>
+    <div class="badges">
+      <span class="timebadge">🧰 PRE-CLASS · ซ่อมเสริมรายบุคคล</span>
+      <span class="timebadge">🛒 Learning Shopping · Self-paced</span>
+      <span class="timebadge">⏱ ชั้นละราว 8 นาที</span>
+    </div>
+  </header>
+
+  <div class="card">
+    <div class="goal">🧭 <b>เข้าชั้นไหน?</b> ครูจะแจ้ง "ชั้นของคุณ" ตามผลวินิจฉัย PRISM ใน Google Classroom ของห้องเรียนคุณ — เข้าเรียนชั้นที่ได้รับมอบหมายก่อน แล้วจะย้อนลงไปซ่อมชั้นล่าง หรือขึ้นชั้นถัดไปเมื่อพร้อมก็ได้</div>
+
+    <div class="dirhead" style="margin-top:16px"><span class="dt">🏬 Mall Directory · ผังชั้น</span><span class="de">tap a floor to enter / แตะชั้นเพื่อเข้าเรียน</span></div>
+
+    <a class="floor" href="level4.html">
+      <div class="fno" style="background:var(--l4bg);color:var(--l4)"><span class="n">4</span><span class="c">Mastery</span></div>
+      <div class="finfo">
+        <div class="fname">My Paragraph, Both Sides</div>
+        <div class="fth">ร้อยทุกอย่างเป็นย่อหน้าเต็ม 5 ส่วน</div>
+        <div class="ffix" style="color:var(--l4)">🔧 ซ่อม: FANBOYS ในย่อหน้าจริง + However / Although / Therefore</div>
+      </div>
+      <span class="fgo">เข้าเรียน →</span>
+    </a>
+
+    <a class="floor" href="level3.html">
+      <div class="fno" style="background:var(--l3bg);color:var(--l3)"><span class="n">3</span><span class="c">Structure</span></div>
+      <div class="finfo">
+        <div class="fname">Two Sides, My Voice</div>
+        <div class="fth">สองมุมมอง + ความเห็นของฉัน</div>
+        <div class="ffix" style="color:var(--l3)">🔧 ซ่อม: FANBOYS ในประโยคสองมุม + while + วลีแสดงทัศนะ</div>
+      </div>
+      <span class="fgo">เข้าเรียน →</span>
+    </a>
+
+    <a class="floor" href="level2.html">
+      <div class="fno" style="background:var(--l2bg);color:var(--l2)"><span class="n">2</span><span class="c">Language</span></div>
+      <div class="finfo">
+        <div class="fname">From FANBOYS to Reasons</div>
+        <div class="fth">ใช้ and / but / so ให้คล่อง แล้วเพิ่ม because</div>
+        <div class="ffix" style="color:var(--l2)">🔧 ซ่อม: เลือกตัวเชื่อมให้ตรงความหมาย เพิ่ม/ขัดแย้ง/ผล/เหตุ</div>
+      </div>
+      <span class="fgo">เข้าเรียน →</span>
+    </a>
+
+    <a class="floor" href="level1.html">
+      <div class="fno" style="background:var(--l1bg);color:var(--l1)"><span class="n">1</span><span class="c">Beginner</span></div>
+      <div class="finfo">
+        <div class="fname">Sentences &amp; FANBOYS</div>
+        <div class="fth">สร้างประโยค S+V+O ให้ถูก แล้วรวมด้วย FANBOYS</div>
+        <div class="ffix" style="color:var(--l1)">🔧 ซ่อม: รากฐานประโยค + รู้จัก for, and, nor, but, or, yet, so</div>
+      </div>
+      <span class="fgo">เข้าเรียน →</span>
+    </a>
+
+    <div class="howto">
+      <div class="ht">📌 วิธีใช้ห้างนี้ (อ่าน 30 วินาที)</div>
+      <ol>
+        <li>เข้า "ชั้นของคุณ" → กรอกชื่อ ห้อง เลขที่ และ<b>อีเมลโรงเรียน</b> ด้านบนสุด</li>
+        <li>ในแต่ละชั้นมี <b>🛒 Learning Shopping</b> — เลือกทำภารกิจ 1→6 ตามลำดับ หรือเลือกซ่อมเฉพาะจุดที่ยังไม่แม่น</li>
+        <li>เก็บ ⭐ จากทุกภารกิจ เขียนงาน แล้วให้ AI ช่วยตรวจแบบชวนคิด (AI ตอบเป็นภาษาไทย)</li>
+        <li>จบที่ภารกิจ <b>SUBMIT</b> → คัดลอกรายงานคะแนน ไปวางส่งใน Google Classroom</li>
+      </ol>
+    </div>
+  </div>
+
+  <footer>เป้าหมายปลายทาง: เขียนย่อหน้า Discuss Both Views and Give an Opinion ได้อย่างมั่นใจ<br>PRISM · Pre-Class Remedial Microlearning with GenAI · โรงเรียนนครสวรรค์</footer>
+</div>
+</body></html>
